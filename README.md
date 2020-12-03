@@ -1,3 +1,3 @@
 # gokeet 
 
-A collection of go lambdas and tools.
+A collection of personal go tools.

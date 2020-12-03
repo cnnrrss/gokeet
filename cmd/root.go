@@ -17,6 +17,7 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/cnnrrss/gokeet/cmd/feeder"
 	"github.com/spf13/cobra"
 	"os"
 
@@ -51,6 +52,14 @@ func Execute() {
 }
 
 func init() {
+	subCmds := [...]*cobra.Command{
+		feeder.FeedCmd,
+	}
+
+	for _, cmd := range subCmds {
+		rootCmd.AddCommand(cmd)
+	}
+
 	cobra.OnInitialize(initConfig)
 
 	// Here you will define your flags and configuration settings.
